@@ -22,13 +22,13 @@
 		  <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">
               <span data-feather="home" class="align-text-bottom"></span>
-              Waredrobr
+              Waredrobe
             </a>
           </li>
 
 		  
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="{{route('archieve.list')}}">
               <span data-feather="home" class="align-text-bottom"></span>
               Fashion Archieve
             </a>

@@ -8,7 +8,7 @@ use App\Models\Outfit;
 class OutfitController extends Controller
 {
     public function list(){
-        $outfits=Outfit::all();
+        $outfits=Outfit::paginate(4);
         return view('admin.pages.outfit.list',compact('outfits'));
     }
     public function form(){

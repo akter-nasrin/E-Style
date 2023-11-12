@@ -7,7 +7,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Outfit Id</th>
+ 
       <th scope="col">Outfit Name</th>
       <th scope="col">Color</th>
       <th scope="col">Material</th>
@@ -17,9 +17,9 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($outfits as $outfit)
-    <tr>
-      <th scope="row">{{$outfit->id}}</th>
+  @foreach ($outfits as  $key=>$outfit)
+  <tr>
+    <th scope="row">{{$key+1}}</th>
       <td>{{$outfit->name}}</td>
       <td>{{$outfit->color}}</td>
       <td>{{$outfit->material}}</td>
@@ -37,4 +37,5 @@
 
   </tbody>
 </table>
+{{ $outfits->links() }}
 @endsection

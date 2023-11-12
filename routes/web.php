@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OutfitController;
+use App\Http\Controllers\ArchieveController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +31,10 @@ Route::get('/',[HomeController::class,'home']);
 Route::get('/outfit/list',[OutfitController::class,'list'])->name('outfit.list');
 Route::get('/outfit/form',[OutfitController::class,'form']);
 Route::post('/outfit/store',[OutfitController::class,'store'])->name('outfit.store');
+Route::get('/archieve/list',[ArchieveController::class,'list'])->name('archieve.list');
+Route::get('/archieve/form',[ArchieveController::class,'form']);
+Route::post('/archieve/store',[ArchieveController::class,'store'])->name('archieve.store');
+
+
+
 
