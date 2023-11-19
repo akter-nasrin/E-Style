@@ -8,10 +8,11 @@
     <tr>
       <th scope="col">#</th>
       
-      <th scope="col">Archieve Name</th>
+      <th scope="col">Archieve Title</th>
+      <th scope="col">Era</th>
       <th scope="col">Region</th>
       <th scope="col">History</th>
-    
+      <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -20,9 +21,11 @@
 @foreach ($archieves as  $key=>$archieve)
   <tr>
     <th scope="row">{{$key+1}}</th>
-    <td>{{$archieve->name}}</td>
+    <td>{{$archieve->title}}</td>
+    <td>{{$archieve->era}}</td>
     <td>{{$archieve->region}}</td>
-      <td>{{$archieve->history}}</td>
+    <td>{{$archieve->history}}</td>
+    <td>{{$archieve->emage}}</td>
 
      
       <td>{{$archieve->action}}</td>

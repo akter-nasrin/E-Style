@@ -11,8 +11,7 @@
       <th scope="col">Outfit Name</th>
       <th scope="col">Color</th>
       <th scope="col">Material</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
+      
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -23,8 +22,7 @@
       <td>{{$outfit->name}}</td>
       <td>{{$outfit->color}}</td>
       <td>{{$outfit->material}}</td>
-      <td>{{$outfit->price}}</td>
-      <td>{{$outfit->description}}</td>
+      
       <td>{{$outfit->action}}</td>
       <td>
         <a class="btn btn-success" href="">Edit</a>

@@ -20,7 +20,7 @@
 
 
 		  <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="{{route('waredrobe.list')}}">
               <span data-feather="home" class="align-text-bottom"></span>
               Waredrobe
             </a>
@@ -35,7 +35,7 @@
           </li>
 
 <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="{{route('fashionnews.list')}}">
               <span data-feather="home" class="align-text-bottom"></span>
               Fashion Shows
             </a>

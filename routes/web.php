@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OutfitController;
 use App\Http\Controllers\ArchieveController;
-
+use App\Http\Controllers\WaredrobeController;
+use App\Http\Controllers\FashionnewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,10 @@ Route::post('/outfit/store',[OutfitController::class,'store'])->name('outfit.sto
 Route::get('/archieve/list',[ArchieveController::class,'list'])->name('archieve.list');
 Route::get('/archieve/form',[ArchieveController::class,'form']);
 Route::post('/archieve/store',[ArchieveController::class,'store'])->name('archieve.store');
+Route::get('/waredrobe/list',[WaredrobeController::class,'list'])->name('waredrobe.list');
+Route::get('/waredrobe/form',[WaredrobeController::class,'form']);
+Route::post('/waredrobe/store',[WaredrobeController::class,'store'])->name('waredrobe.store');
+Route::get('/fashionnews/list',[FashionnewsController::class,'list'])->name('fashionnews.list');
 
 
 
