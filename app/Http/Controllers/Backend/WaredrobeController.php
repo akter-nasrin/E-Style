@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Models\\Waredrobe;
+use App\Models\Waredrobe;
 
 class WaredrobeController extends Controller
 {
     public function list(){
-        return view('admin.pages.waredrobe.list');
+        $waredrobes=Waredrobe::all();
+        return view('admin.pages.waredrobe.list',compact('waredrobes'));
     }
     public function form(){
         return view('admin.pages.waredrobe.form');

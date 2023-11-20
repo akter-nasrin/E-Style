@@ -11,7 +11,7 @@
   </div>
 
   <div class="form-group">
-  <label for="">Outfit Color :</label>
+  <label for="">Outfit Details :</label>
    <textarea class="form-control" name="archieve_era" id="" cols="30" rows="10"></textarea>
    
   

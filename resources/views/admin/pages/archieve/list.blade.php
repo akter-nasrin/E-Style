@@ -25,7 +25,7 @@
     <td>{{$archieve->era}}</td>
     <td>{{$archieve->region}}</td>
     <td>{{$archieve->history}}</td>
-    <td>{{$archieve->emage}}</td>
+    <td>{{$archieve->image}}</td>
 
      
       <td>{{$archieve->action}}</td>
