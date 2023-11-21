@@ -46,13 +46,18 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/login', [UserController::class, 'loginForm'])->name('admin.login');
 Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('admin.login.post');
 
-Route::group(['middleware' => 'auth'], function () {
+//Route::group(['middleware' => 'auth'], function () {
         
  Route::get('/logout', [UserController::class, 'logout'])->name('admin.logout');
-Route::get('/',[HomeController::class,'home']);
+
+
+
+ Route::get('/',[HomeController::class,'home'])->name('dashboard');
 Route::get('/outfit/list',[OutfitController::class,'list'])->name('outfit.list');
 Route::get('/outfit/form',[OutfitController::class,'form'])->name('outfit.form');
 Route::post('/outfit/store',[OutfitController::class,'store'])->name('outfit.store');
+Route::get('/outfit/delete/{id}',[OutfitController::class, 'delete'])->name('outfit.delete');
+Route::get('/outfit/edit/{id}',[OutfitController::class,'edit'])->name('outfit.edit');
 Route::get('/archieve/list',[ArchieveController::class,'list'])->name('archieve.list');
 Route::get('/archieve/form',[ArchieveController::class,'form']);
 Route::post('/archieve/store',[ArchieveController::class,'store'])->name('archieve.store');
@@ -61,4 +66,4 @@ Route::get('/waredrobe/form',[WaredrobeController::class,'form'])->name('waredro
 Route::post('/waredrobe/store',[WaredrobeController::class,'store'])->name('waredrobe.store');
 Route::get('/fashionnews/list',[FashionnewsController::class,'list'])->name('fashionnews.list');
 });
-});
+//});

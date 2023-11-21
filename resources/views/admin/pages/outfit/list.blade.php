@@ -25,8 +25,8 @@
       
       <td>{{$outfit->action}}</td>
       <td>
-        <a class="btn btn-success" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a class="btn btn-success" href="{{route('outfit.edit',$outfit->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('outfit.delete',$outfit->id)}}">Delete</a>
         </td>
     </tr>
 

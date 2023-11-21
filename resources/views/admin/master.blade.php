@@ -8,7 +8,7 @@
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
     <title>Style</title>
-
+    @notifyCss
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
 
     <!-- Bootstrap core CSS -->
@@ -24,6 +24,7 @@
     <div class="container-fluid">
       <div class="row">
         @include('admin.partials.sidebar')
+        @include('notify::components.notify')
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
          
             @yield('content')
@@ -47,7 +48,7 @@
       feather.replace()
     </script>
 
-    
+@notifyJs
     
   </body>
 </html>
