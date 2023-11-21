@@ -30,18 +30,38 @@ public function edit($id){
 }
 
 
+public function update(Request $request,$id){
+    dd($id);
+    $outfit=Outfit::find($id);
+    if($outfit)
+    {
+        $outfit->update([
+            'name'=>$request->outfit_name,
+            'color'=>$request->outfit_color,
+            'material'=>$request->outfit_material,
+            'price'=>$request->outfit_price,
+            'description'=>$request->outfit_description,
+         
+        ]);
+            notify()->success('Outfit Updated Successfully');
+            return redirect()->back();
+
+    }
+}
 
 
 
 
 
+         
+
+
+            
 
 
 
 
 
-
-    
     public function form(){
         return view('admin.pages.outfit.form');
     }

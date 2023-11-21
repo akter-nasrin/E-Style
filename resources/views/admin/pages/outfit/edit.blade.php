@@ -1,8 +1,10 @@
 @extends('admin.master')
 @section('content')
-<form action="{{route('outfit.store')}}"method="post">
+
+<form action="{{route('outfit.update',$outfit->id)}}"method="post">
     @csrf
-<div class="form-group">
+    @method('put')
+<div class="form-group">mn hfcx
     <label for="">Enter Outfit Name:</label>
     <input type="text" class="form-control" id="" placeholder="Enter name" name="outfit_name">
     @error('outfit_name')

@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-<form action="{{route('outfit.store')}}"method="post">
+<form action="{{route('outfit.store',$outfit->id)}}"method="post">
     @csrf
 <div class="form-group">
     <label for="">Enter Outfit Name:</label>

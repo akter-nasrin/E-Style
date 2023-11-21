@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\OutfitController;
 use App\Http\Controllers\Backend\ArchieveController;
 use App\Http\Controllers\Backend\WaredrobeController;
 use App\Http\Controllers\Backend\FashionnewsController;
+use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,18 @@ use App\Http\Controllers\Backend\FashionnewsController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//website route
+Route::get('/',[FrontendHomeController::class,('home')])->name('home');
+
+
+
+
+
+
+
+
+
 
 
 
@@ -58,6 +71,7 @@ Route::get('/outfit/form',[OutfitController::class,'form'])->name('outfit.form')
 Route::post('/outfit/store',[OutfitController::class,'store'])->name('outfit.store');
 Route::get('/outfit/delete/{id}',[OutfitController::class, 'delete'])->name('outfit.delete');
 Route::get('/outfit/edit/{id}',[OutfitController::class,'edit'])->name('outfit.edit');
+Route::put('/outfit/update/{$id}',[OutfitController::class,'update'])->name('outfit.update');
 Route::get('/archieve/list',[ArchieveController::class,'list'])->name('archieve.list');
 Route::get('/archieve/form',[ArchieveController::class,'form']);
 Route::post('/archieve/store',[ArchieveController::class,'store'])->name('archieve.store');
