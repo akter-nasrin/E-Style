@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('color');
             $table->string('material');
-        
-            $table->integer('price');
             $table->text('description');
+          
+            $table->integer('price');
+            $table->text('image')->nullable;
             $table->timestamps();
         });
     }

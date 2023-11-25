@@ -11,6 +11,11 @@
       <th scope="col">Outfit Name</th>
       <th scope="col">Color</th>
       <th scope="col">Material</th>
+      <th scope="col">Description</th>
+     
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+
       
       <th scope="col">Action</th>
     </tr>
@@ -22,6 +27,13 @@
       <td>{{$outfit->name}}</td>
       <td>{{$outfit->color}}</td>
       <td>{{$outfit->material}}</td>
+      <td>{{$outfit->description}}</td>
+      
+      <td>{{$outfit->price}}</td>
+      <td>
+        <img width="20%" src="{{url('/uploads/'.$outfit->image)}}" alt="">
+      </td>
+   
       
       <td>{{$outfit->action}}</td>
       <td>

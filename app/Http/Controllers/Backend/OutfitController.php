@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Outfit;
+use Illuminate\Support\Facades\Validator;
+
 
 class OutfitController extends Controller
 {
@@ -35,12 +37,22 @@ public function update(Request $request,$id){
     $outfit=Outfit::find($id);
     if($outfit)
     {
+        $fileName=$outfit->image;
+          if($request->hasFile('image'))
+          {
+              $file=$request->file('image');
+              $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+             
+              $file->storeAs('/uploads',$fileName);
+    
+      }
         $outfit->update([
             'name'=>$request->outfit_name,
             'color'=>$request->outfit_color,
             'material'=>$request->outfit_material,
-            'price'=>$request->outfit_price,
             'description'=>$request->outfit_description,
+            'price'=>$request->outfit_price,
+            'image'=>$fileName,
          
         ]);
             notify()->success('Outfit Updated Successfully');
@@ -66,16 +78,42 @@ public function update(Request $request,$id){
         return view('admin.pages.outfit.form');
     }
     public function store(Request $request){
-//dd($request->all());
+        $validate=Validator::make($request->all(),[
+            
+            'outfit_name'=>'required',
+            
+            'outfit_price'=>'required|numeric|min:10',
+        ]);
 
+      if($validate->fails())
+      {
+
+        // notify()->error($validate->getMessageBag());
+        // return redirect()->back();
+
+        return redirect()->back()->withErrors($validate);
+      }
+
+      $fileName=null;
+      if($request->hasFile('image'))
+      {
+          $file=$request->file('image');
+          $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+         
+          $file->storeAs('/uploads',$fileName);
+
+      }
 
 Outfit::create([
    
     'name'=>$request->outfit_name,
     'color'=>$request->outfit_color,
     'material'=>$request->outfit_material,
-    'price'=>$request->outfit_price,
     'description'=>$request->outfit_description,
+   
+    'price'=>$request->outfit_price,
+
+    'image'=>$fileName,
 
     
 ]);
