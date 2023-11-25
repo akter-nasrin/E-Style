@@ -82,15 +82,7 @@ class UserController extends Controller
             return redirect()->back()->with('myError',$validate->getMessageBag());
         }
 
-        $fileName=null;
-        if($request->hasFile('user_image'))
-        {
-            $file=$request->file('user_image');
-            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-           
-            $file->storeAs('/uploads',$fileName);
-
-        }
+       
 
        
         User::create([

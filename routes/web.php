@@ -59,7 +59,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/login', [UserController::class, 'loginForm'])->name('admin.login');
 Route::post('/login-form-post', [UserController::class, 'loginPost'])->name('admin.login.post');
 
-//Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
         
  Route::get('/logout', [UserController::class, 'logout'])->name('admin.logout');
 
@@ -80,4 +80,4 @@ Route::get('/waredrobe/form',[WaredrobeController::class,'form'])->name('waredro
 Route::post('/waredrobe/store',[WaredrobeController::class,'store'])->name('waredrobe.store');
 Route::get('/fashionnews/list',[FashionnewsController::class,'list'])->name('fashionnews.list');
 });
-//});
+});
