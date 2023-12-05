@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\ArchieveController;
 use App\Http\Controllers\Backend\WaredrobeController;
 use App\Http\Controllers\Backend\FashionnewsController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\UserController as FrontendUserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,11 @@ use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 */
 
 //website route
-Route::get('/',[FrontendHomeController::class,('home')])->name('home');
+Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+Route::get('/registration',[FrontendUserController::class,'registration'])->name('user.registration');
+Route::post('/registration',[FrontendUserController::class])->name('user.store');
+Route::get('/login',[FrontendUserController::class,'login'])->name('user.login');
+Route::post('/login', [FrontendUserController::class,'doLogin'])->name('user.do.login');
 
 
 

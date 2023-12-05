@@ -33,7 +33,7 @@ public function edit($id){
 
 
 public function update(Request $request,$id){
-    dd($id);
+    
     $outfit=Outfit::find($id);
     if($outfit)
     {
@@ -43,16 +43,19 @@ public function update(Request $request,$id){
               $file=$request->file('image');
               $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
              
-              $file->storeAs('/uploads',$fileName);
+              $file->storeAs('/uploads',$fileName);}
     
-      }
+      
         $outfit->update([
             'name'=>$request->outfit_name,
             'color'=>$request->outfit_color,
             'material'=>$request->outfit_material,
             'description'=>$request->outfit_description,
+           
             'price'=>$request->outfit_price,
+        
             'image'=>$fileName,
+        
          
         ]);
             notify()->success('Outfit Updated Successfully');
