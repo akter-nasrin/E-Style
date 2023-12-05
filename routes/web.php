@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\OutfitController;
 use App\Http\Controllers\Backend\ArchieveController;
 use App\Http\Controllers\Backend\WaredrobeController;
 use App\Http\Controllers\Backend\FashionnewsController;
+use App\Http\Controllers\Backend\FashionshowController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\UserController as FrontendUserController;
 /*
@@ -83,6 +84,10 @@ Route::post('/archieve/store',[ArchieveController::class,'store'])->name('archie
 Route::get('/waredrobe/list',[WaredrobeController::class,'list'])->name('waredrobe.list');
 Route::get('/waredrobe/form',[WaredrobeController::class,'form'])->name('waredrobe.form');
 Route::post('/waredrobe/store',[WaredrobeController::class,'store'])->name('waredrobe.store');
-Route::get('/fashionnews/list',[FashionnewsController::class,'list'])->name('fashionnews.list');
+//Route::get('/fashionnews/list',[FashionnewsController::class,'list'])->name('fashionnews.list');
+
+Route::get('/fashionshow/list',[FashionshowController::class,'list'])->name('fashionshow.list');
+Route::get('/fashionshow/form',[FashionshowController::class,'form'])->name('fashion.form');
+Route::post('/fashionshow/store',[FashionshowController::class,'store'])->name('fashion.store');
 });
 });

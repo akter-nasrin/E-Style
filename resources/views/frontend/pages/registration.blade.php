@@ -1,8 +1,3 @@
-@extends('frontend.master')
-
-
-@section('content')
-
 <form action="{{route('user.store')}}" method="post">
     @csrf
 
@@ -25,5 +20,3 @@
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-@endsection

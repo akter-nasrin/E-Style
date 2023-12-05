@@ -34,17 +34,12 @@
             </a>
           </li>
 
-<li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{route('fashionnews.list')}}">
-              <span data-feather="home" class="align-text-bottom"></span>
-              Fashion Shows
-            </a>
-          </li>
+
           
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="{{route('fashionshow.list')}}">
               <span data-feather="home" class="align-text-bottom"></span>
-              Fashion News
+              Fashion Show
             </a>
           </li>
           <li class="nav-item">

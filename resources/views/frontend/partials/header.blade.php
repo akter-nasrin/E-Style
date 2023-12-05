@@ -7,12 +7,15 @@
 		<li class="nav-about-us" role="presentation"><a href="about.html">Tips</a></li>
 		<li class="nav-author-page" role="presentation"><a href="author.html">Blog</a></li>
         <li class="nav-author-page" role="presentation"><a href="author.html">Fashion Show</a></li>
-      
+        
         <li class="" role=""><a href="{{route('user.login')}}">Login</a></li>
-       
 
+		<span style="padding: 5px;">|</span>
 
+		<li ><a href="{{route('user.registration')}}">Registration</a></li>
+     
 
+	   
 
        
 		
