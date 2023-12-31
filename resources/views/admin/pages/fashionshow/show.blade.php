@@ -18,25 +18,9 @@
     </tr>
   </thead>
   <tbody>
-  @foreach ($fashionShows as  $key=>$fashionshow)
-  <tr>
-    <th scope="row">{{$key+1}}</th>
-      <td>{{$show->name}}</td>
-      <td>{{$organizer->name}}</td>
-      <td>{{$show->date}}</td>
-      
-      
-      
-   
-      
-      <td>{{$fashionshow->action}}</td>
-      <td>
-        <a class="btn btn-success" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
-        </td>
-    </tr>
+  
 
-    @endforeach
+  
     
 
 

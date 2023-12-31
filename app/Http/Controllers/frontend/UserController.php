@@ -12,21 +12,28 @@ class UserController extends Controller
 public function registration(){
     return view('frontend.pages.registration');
 }
+public function profile()
+{
+   // $orders=Order::where('user_id',auth()->user()->id)->get();
+    return view('frontend.pages.profile');
+}
 
 
-public function store(Request $request)
+
+public function doregistration(Request $request)
 {
     // dd($request->all());
 
     User::create([
         'name'=>$request->name,
         'email'=>$request->email,
-        'role'=>'customer',
+        'role'=>'user',
         'password'=>bcrypt($request->password),
     ]);
 
     notify()->success('Customer Registration successful.');
-    return redirect()->back();
+    return redirect()->route('home');
+   
 }
 
     public function login(){
@@ -38,7 +45,7 @@ public function store(Request $request)
             'email'=>'required',
             'password'=>'required',
         ]);
-
+ 
         if($val->fails())
         {
             notify()->error($val->getMessageBag());
@@ -58,5 +65,12 @@ public function store(Request $request)
             return redirect()->back();
 
 
+    }
+    
+    public function logout()
+    {
+        auth()->logout();
+        notify()->success('Logout Success.');    
+        return redirect()->route('home');
     }
 }

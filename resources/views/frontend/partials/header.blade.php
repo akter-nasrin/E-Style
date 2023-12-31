@@ -16,6 +16,11 @@
      
 
 	   
+		 @auth
+                <a href="{{route('user.logout')}}">Logout </a> |
+                <a href="{{route('profile.view')}}"> {{auth()->user()->name}} ({{ auth()->user()->role }})</a>
+                @endauth 
+
 
        
 		

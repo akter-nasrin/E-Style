@@ -19,6 +19,8 @@ use App\Http\Controllers\Backend\ArchieveController;
 use App\Http\Controllers\Backend\WaredrobeController;
 use App\Http\Controllers\Backend\FashionnewsController;
 use App\Http\Controllers\Backend\FashionshowController;
+use App\Http\Controllers\Backend\DesignController;
+use App\Http\Controllers\Backend\VoteController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\UserController as FrontendUserController;
 /*
@@ -34,12 +36,16 @@ use App\Http\Controllers\Frontend\UserController as FrontendUserController;
 
 //website route
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+
+
 Route::get('/registration',[FrontendUserController::class,'registration'])->name('user.registration');
-Route::post('/registration',[FrontendUserController::class])->name('user.store');
+Route::post('/registration',[FrontendUserController::class,'doregistration'])->name('user.store');
 Route::get('/login',[FrontendUserController::class,'login'])->name('user.login');
 Route::post('/login', [FrontendUserController::class,'doLogin'])->name('user.do.login');
-
-
+Route::get('/profile', [FrontendUserController::class, 'profile'])->name('profile.view');
+Route::group(['middleware' => 'auth'], function () {
+Route::get('/logout', [FrontendUserController::class, 'logout'])->name('user.logout');
+});
 
 
 
@@ -71,7 +77,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
- Route::get('/',[HomeController::class,'home'])->name('dashboard');
+Route::get('/',[HomeController::class,'home'])->name('dashboard');
+
+Route::get('/users', [UserController::class, 'list'])->name('users.list');
+Route::get('/users/create', [UserController::class, 'createForm'])->name('users.create');
+Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+
+
 Route::get('/outfit/list',[OutfitController::class,'list'])->name('outfit.list');
 Route::get('/outfit/form',[OutfitController::class,'form'])->name('outfit.form');
 Route::post('/outfit/store',[OutfitController::class,'store'])->name('outfit.store');
@@ -89,5 +101,24 @@ Route::post('/waredrobe/store',[WaredrobeController::class,'store'])->name('ware
 Route::get('/fashionshow/list',[FashionshowController::class,'list'])->name('fashionshow.list');
 Route::get('/fashionshow/form',[FashionshowController::class,'form'])->name('fashion.form');
 Route::post('/fashionshow/store',[FashionshowController::class,'store'])->name('fashion.store');
+
+
+
+//Route::middleware('auth')->post('/designs/{id}/vote', 'VoteController@vote')->name('designs.vote');
+// routes/web.php
+
+//Route::get('/designs', 'DesignController@showDesigns')->name('designs.index');
+// routes/web.php
+
+//te::middleware('auth')->group(function () {
+    //Route::get('/designs/submit', 'DesignController@showSubmitForm')->name('designs.submit');
+    //Route::post('/designs/submit', 'DesignController@submitDesign');
+//});
+
+//  Route::get('/design/showdesign',[DesignController::class,'list'])->name('design.list');
+//  Route::get('/design/form',[DesignController::class,'form']);
+//  Route::post('/design/submitdesign',[DesignController::class,'submitdesign'])->name('design.submit');
+//  Route::post('/design/{id}/vote',[VoteController::class,'vote'])->name('desingns.vote');
+
 });
 });

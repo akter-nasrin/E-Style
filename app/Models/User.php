@@ -19,7 +19,10 @@ class User extends Authenticatable
      */
     protected $guarded=[];
     
-
+    public function votes()
+    {
+        return $this->hasMany(Vote::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

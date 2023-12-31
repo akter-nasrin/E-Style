@@ -42,6 +42,31 @@
               Fashion Show
             </a>
           </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">
+              <span data-feather="home" class="align-text-bottom"></span>
+           Vote
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{route('design.list')}}">
+              <span data-feather="home" class="align-text-bottom"></span>
+          Design
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="">
+              <span data-feather="home" class="align-text-bottom"></span>
+           Organizer
+            </a>
+          </li>
+
+
+
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">
               <span data-feather="home" class="align-text-bottom"></span>
