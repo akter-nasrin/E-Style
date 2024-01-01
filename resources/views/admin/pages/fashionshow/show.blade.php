@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>Fashion Show</h1>
-<a href="{{route('fashionshow.list')}}"button class="btn btn-primary"> create</a>
+<a href="{{route('fashion.form')}}"button class="btn btn-primary"> create</a>
 <table class="table">
     
   <thead>

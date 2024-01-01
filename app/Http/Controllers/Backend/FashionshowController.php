@@ -15,6 +15,8 @@ class FashionshowController extends Controller
     
     }
 
+
+    
     //public function show($id)
     //{
         //$fashionShow = FashionShow::findOrFail($id);
@@ -23,4 +25,7 @@ class FashionshowController extends Controller
     //}
 
    }
+   public function form(){
+    return view ('admin.pages.fashionshow.form');
+}
 }

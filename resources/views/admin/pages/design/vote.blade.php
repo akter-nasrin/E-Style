@@ -1,4 +1,4 @@
- resources/views/designs/vote.blade.php
+ <!-- resources/views/designs/vote.blade.php
 
 @extends('admin.master')
 
@@ -19,4 +19,4 @@
             </div>
         @endforeach
     </div>
-@endsection 
+@endsection  -->

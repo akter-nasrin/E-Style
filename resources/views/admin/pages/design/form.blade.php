@@ -1,4 +1,4 @@
-@extends('admin.master')
+<!-- @extends('admin.master')
 @section('content')
 <form action="{{route('design.submit')}}"method="post" enctype="multipart/form-data">
     @csrf
@@ -37,4 +37,4 @@
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-@endsection 
+@endsection  -->

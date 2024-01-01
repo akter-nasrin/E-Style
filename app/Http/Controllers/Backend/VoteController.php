@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Http\Controllers\Backend;
 
@@ -34,4 +34,4 @@ class VoteController extends Controller
     }
 
 
-}
+} -->

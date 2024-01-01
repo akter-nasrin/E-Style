@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\ArchieveController;
 use App\Http\Controllers\Backend\WaredrobeController;
 use App\Http\Controllers\Backend\FashionnewsController;
 use App\Http\Controllers\Backend\FashionshowController;
+use App\Http\Controllers\Backend\DesignerController;
 use App\Http\Controllers\Backend\DesignController;
 use App\Http\Controllers\Backend\VoteController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
@@ -102,6 +103,14 @@ Route::get('/fashionshow/list',[FashionshowController::class,'list'])->name('fas
 Route::get('/fashionshow/form',[FashionshowController::class,'form'])->name('fashion.form');
 Route::post('/fashionshow/store',[FashionshowController::class,'store'])->name('fashion.store');
 
+
+Route::get('/designers/create', [DesignerController::class, 'create'])->name('designers.create');
+Route::post('/designers', [DesignerController::class, 'store'])->name('designers.store');
+Route::get('/designers/{designer}', [DesignerController::class, 'show'])->name('designers.show');
+
+
+
+// Add additional routes for editing, updating, and deleting designer profiles
 
 
 //Route::middleware('auth')->post('/designs/{id}/vote', 'VoteController@vote')->name('designs.vote');
