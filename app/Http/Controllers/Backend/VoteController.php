@@ -1,7 +1,6 @@
 <!-- <?php
 
-namespace App\Http\Controllers\Backend;
-
+namespace App\Http\Controllers\Backend\VoteController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -34,4 +33,4 @@ class VoteController extends Controller
     }
 
 
-} -->
+} 

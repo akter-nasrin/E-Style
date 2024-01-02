@@ -56,4 +56,4 @@ public function list()
         return redirect()->route('design.form')->with('success', 'Design submitted successfully!');
     }
 }
- -->
+

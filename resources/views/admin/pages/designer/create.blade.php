@@ -53,6 +53,10 @@
   <label for="">Enter job title(if have):</label>
    <textarea class="form-control" name="satus" id="" cols="30" rows="10"></textarea>
   </div> 
+  <div class="form-group">
+  <label for="">Image:</label>
+   <textarea class="form-control" name="satus" id="" cols="30" rows="10"></textarea>
+  </div> 
   
     
   

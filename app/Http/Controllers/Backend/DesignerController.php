@@ -11,13 +11,22 @@ class DesignerController extends Controller
 {
     public function create()
     {
-        return view('designers.create');
+        return view('admin.pages.designer.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
+            'email'=>'required',
+            'password'=>'required',
+            'country'=>'required',
+            'address'=>'required',
+            'education'=>'required',
+            'experience'=>'required',
+            // 'job title'=>$request->'job title',
+        
+        
             // Add other designer-specific fields as needed
         ]);
 

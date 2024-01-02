@@ -45,6 +45,13 @@
 
 
           <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{route('designer.create')}}">
+              <span data-feather="home" class="align-text-bottom"></span>
+           Designer
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="">
               <span data-feather="home" class="align-text-bottom"></span>
            Vote

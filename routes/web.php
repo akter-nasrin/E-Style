@@ -104,9 +104,9 @@ Route::get('/fashionshow/form',[FashionshowController::class,'form'])->name('fas
 Route::post('/fashionshow/store',[FashionshowController::class,'store'])->name('fashion.store');
 
 
-Route::get('/designers/create', [DesignerController::class, 'create'])->name('designers.create');
-Route::post('/designers', [DesignerController::class, 'store'])->name('designers.store');
-Route::get('/designers/{designer}', [DesignerController::class, 'show'])->name('designers.show');
+Route::get('/designer/create', [DesignerController::class, 'create'])->name('designer.create');
+Route::post('/designer', [DesignerController::class, 'store'])->name('designer.store');
+Route::get('/designer/{designer}', [DesignerController::class, 'show'])->name('designer.show');
 
 
 
