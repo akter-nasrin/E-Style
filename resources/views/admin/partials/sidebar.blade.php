@@ -42,10 +42,16 @@
               Fashion Show
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{route('tips.list')}}">
+              <span data-feather="home" class="align-text-bottom"></span>
+              Fashion Tips
+            </a>
+          </li>
 
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{route('designer.create')}}">
+            <a class="nav-link" aria-current="page" href="{{route('designer.list')}}">
               <span data-feather="home" class="align-text-bottom"></span>
            Designer
             </a>

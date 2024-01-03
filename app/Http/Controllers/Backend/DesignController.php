@@ -1,26 +1,23 @@
-<!-- <?php
-
+<?php
 namespace App\Http\Controllers\Backend;
-
 use App\Http\Controllers\Controller;
-use App\Models\Design;
-use App\Models\User;
-use Illuminate\Http\Request;
+ use App\Models\Design;
+ use App\Models\User;
+ use Illuminate\Http\Request;
 
-class DesignController extends Controller
+ class DesignController extends Controller
 {
-// app/Http/Controllers/DesignController.php
+
 
 public function list()
 {
-    $products=Product::with(['category','brand'])->paginate(5);
-    $designs = Design::with(['design','user']); // You might want to paginate or filter designs ->paginate(5);
+    
+     $designs = Design::with(['design','user'])->paginate(5); // You might want to paginate or filter designs ->paginate(5);
 
-    return view('pages.design.list', compact('designs'));
+   return view('pages.design.list', compact('designs'));
 }
 
-
-    public function form()
+     public function form()
     {
         return view('pages.design.form');
     }
@@ -28,32 +25,32 @@ public function list()
     public function submitdesign(Request $request)
     {
         $request->validate([
-            'image' => 'required',
-            'description' => 'required',
-        ]);
+             'image' => 'required',
+           'description' => 'required',
+       ]);
 
         $user = auth()->user();
 
         $fileName=null;
-      if($request->hasFile('image'))
-      {
-          $file=$request->file('image');
+     if($request->hasFile('image'))
+     {
+           $file=$request->file('image');
           $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
          
-          $file->storeAs('/uploads',$fileName);
+         $file->storeAs('/uploads',$fileName);
 
       }
-      Product::create([
+       Product::create([
                 'user_id'=>$request->user_id,
                 
                 'name'=>$request->design_name,
             
                 'description'=>$request->design_description,
         
-                'image'=>$fileName
+                 'image'=>$fileName
       ]);
 
-        return redirect()->route('design.form')->with('success', 'Design submitted successfully!');
-    }
-}
+       return redirect()->route('design.form')->with('success', 'Design submitted successfully!');
+   }
+ }
 

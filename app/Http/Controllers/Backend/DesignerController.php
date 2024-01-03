@@ -9,10 +9,16 @@ use Illuminate\Support\Facades\Auth;
 
 class DesignerController extends Controller
 {
+    public function list()
+    {
+        $designers = Designer::all();
+        return view('admin.pages.designer.list', compact('designers'));
+    }
     public function create()
     {
         return view('admin.pages.designer.create');
     }
+
 
     public function store(Request $request)
     {
@@ -35,7 +41,7 @@ class DesignerController extends Controller
         return redirect()->route('designers.show', $designer)->with('success', 'Designer registered successfully!');
     }
 
-    public function show(Designer $designer)
+    public function show(designers $designer)
     {
         return view('designers.show', compact('designer'));
     }

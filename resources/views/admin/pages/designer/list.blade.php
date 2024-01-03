@@ -1,7 +1,9 @@
 @extends('admin.master')
+
 @section('content')
-<h1>Outfit</h1>
-<a href="{{route(''designer.list'')}}"button class="btn btn-primary">Create</button></a>
+<h1>Designer</h1>
+<a href="{{route('designer.create')}}"button class="btn btn-primary">Create</button></a>
+
 <table class="table">
     
   <thead>
@@ -16,7 +18,7 @@
       <th scope="col">Address</th>
       <th scope="col">Education</th>
       <th scope="col">Experience</th>
-      <th scope="col">Job Title</th>
+     
       
       <th scope="col">Action</th>
     </tr>
@@ -35,23 +37,19 @@
       <td>{{$designer->education}}</td>
       
       <td>{{$designer->experience}}</td>
-      <td>{{$designer->job title}}</td>
+     
       <td>
-        <img width="20%" src="{{url('/uploads/'.$designer->image)}}" alt="">
+        <img width="20%" src="" alt="">
       </td>
    
-      
+    
       <td>{{$designer->action}}</td>
-      <!-- <td>
-        <a class="btn btn-success" href="{{route('outfit.edit',$outfit->id)}}">Edit</a>
-        <a class="btn btn-danger" href="{{route('outfit.delete',$outfit->id)}}">Delete</a>
-        </td> -->
-    </tr>
+      
 
     @endforeach
     
 
   </tbody>
 </table>
-{{ $outfits->links() }}
+
 @endsection
