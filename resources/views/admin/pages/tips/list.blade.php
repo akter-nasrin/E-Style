@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('content')
-<h1>Designer</h1>
+<h1>Fashion Tips</h1>
 <a href="{{route('tips.list')}}"button class="btn btn-primary">Create</button></a>
 
 <table class="table">

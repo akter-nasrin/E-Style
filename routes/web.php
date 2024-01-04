@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\ArchieveController;
 use App\Http\Controllers\Backend\WaredrobeController;
 use App\Http\Controllers\Backend\FashionnewsController;
 use App\Http\Controllers\Backend\FashionshowController;
+use App\Http\Controllers\Backend\FashionBlogController;
 use App\Http\Controllers\Backend\DesignerController;
 use App\Http\Controllers\Backend\DesignController;
 use App\Http\Controllers\Backend\VoteController;
@@ -92,6 +93,8 @@ Route::post('/outfit/store',[OutfitController::class,'store'])->name('outfit.sto
 Route::get('/outfit/delete/{id}',[OutfitController::class, 'delete'])->name('outfit.delete');
 Route::get('/outfit/edit/{id}',[OutfitController::class,'edit'])->name('outfit.edit');
 Route::put('/outfit/update/{$id}',[OutfitController::class,'update'])->name('outfit.update');
+
+
 Route::get('/archieve/list',[ArchieveController::class,'list'])->name('archieve.list');
 Route::get('/archieve/form',[ArchieveController::class,'form']);
 Route::post('/archieve/store',[ArchieveController::class,'store'])->name('archieve.store');
@@ -109,9 +112,14 @@ Route::get('/designer/create', [DesignerController::class, 'create'])->name('des
 Route::get('/designer', [DesignerController::class, 'list'])->name('designer.list');
 Route::post('/designer', [DesignerController::class, 'store'])->name('designer.store');
 
-Route::get('/tips/create', [FashiontipsController::class, 'form'])->name('tips.form');
+Route::get('/tips/form', [FashiontipsController::class, 'form'])->name('tips.form');
 Route::get('/tips/list', [FashiontipsController::class, 'list'])->name('tips.list');
-Route::post('/tips/store', [FashiontipsController::class, 'store'])->name('tips.store');
+Route::post('/tips/store', [FashiontipsController::class, 'store'])->name('tip.store');
+
+
+Route::get('/blog/form',[FashionBlogController::class,'form'])->name('blog.form');
+Route::get('/blog/list',[FashionBlogController::class,'list'])->name('blog.list');
+Route::post('/blog/store',[FashionBlogController::class,'store'])->name('blog.store');
 // Add additional routes for editing, updating, and deleting designer profiles
 
 

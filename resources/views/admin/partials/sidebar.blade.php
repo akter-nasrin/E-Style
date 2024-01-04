@@ -75,7 +75,7 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="blog.list">
               <span data-feather="home" class="align-text-bottom"></span>
               Fashion Blog
             </a>

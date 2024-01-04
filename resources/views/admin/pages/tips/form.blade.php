@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-<form action="{{route('tips.store')}}"method="post" enctype="multipart/form-data">
+<form action="{{route('tip.store')}}"method="post" enctype="multipart/form-data">
     @csrf
 <div class="form-group">
     <label for="">Enter Tips Title:</label>

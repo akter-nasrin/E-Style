@@ -19,16 +19,20 @@ class FashiontipsController extends Controller
     }
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'image'=> $fileName,
+        FashionTip::create([
+           
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'image'=>$request->image,
+            
+        
+        
+            
         ]);
-
-        FashionTip::create($request->all());
-
-        return redirect()->route('fashion_tips.index')->with('success', 'Fashion tip added successfully!');
-    }
+        
+        return redirect()->back();
+        
+         }
 
     // Add edit, update, delete methods as needed
 }
