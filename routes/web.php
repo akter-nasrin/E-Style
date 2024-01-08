@@ -26,6 +26,7 @@ use App\Http\Controllers\Backend\VoteController;
 use App\Http\Controllers\Backend\FashiontipsController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\UserController as FrontendUserController;
+use App\Http\Controllers\Frontend\UserController as FrontendFashionShowController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +49,7 @@ Route::post('/login', [FrontendUserController::class,'doLogin'])->name('user.do.
 Route::get('/profile', [FrontendUserController::class, 'profile'])->name('profile.view');
 Route::group(['middleware' => 'auth'], function () {
 Route::get('/logout', [FrontendUserController::class, 'logout'])->name('user.logout');
+Route::get('/fashionshow',[FrontendFashionShowController::class,'show'])->name('fashion.show');
 });
 
 
@@ -123,21 +125,21 @@ Route::post('/blog/store',[FashionBlogController::class,'store'])->name('blog.st
 // Add additional routes for editing, updating, and deleting designer profiles
 
 
-//Route::middleware('auth')->post('/designs/{id}/vote', 'VoteController@vote')->name('designs.vote');
+Route::middleware('auth')->post('/designs/{id}/vote', 'VoteController@vote')->name('designs.vote');
 // routes/web.php
 
-//Route::get('/designs', 'DesignController@showDesigns')->name('designs.index');
+Route::get('/designs', 'DesignController@showDesigns')->name('designs.index');
 // routes/web.php
 
-//te::middleware('auth')->group(function () {
-    //Route::get('/designs/submit', 'DesignController@showSubmitForm')->name('designs.submit');
-    //Route::post('/designs/submit', 'DesignController@submitDesign');
-//});
+Route::middleware('auth')->group(function () {
+    Route::get('/designs/submit', 'DesignController@showSubmitForm')->name('designs.submit');
+    Route::post('/designs/submit', 'DesignController@submitDesign');
+});
 
-//  Route::get('/design/showdesign',[DesignController::class,'list'])->name('design.list');
-//  Route::get('/design/form',[DesignController::class,'form']);
-//  Route::post('/design/submitdesign',[DesignController::class,'submitdesign'])->name('design.submit');
-//  Route::post('/design/{id}/vote',[VoteController::class,'vote'])->name('desingns.vote');
+  Route::get('/design/showdesign',[DesignController::class,'list'])->name('design.list');
+  Route::get('/design/form',[DesignController::class,'form']);
+  Route::post('/design/submitdesign',[DesignController::class,'submitdesign'])->name('design.submit');
+  Route::post('/design/{id}/vote',[VoteController::class,'vote'])->name('desingns.vote');
 
 });
 });

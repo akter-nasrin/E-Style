@@ -14,7 +14,6 @@
       <th scope="col">Email</th>
       <th scope="col">Password</th>
       <th scope="col">Country</th>
-     
       <th scope="col">Address</th>
       <th scope="col">Education</th>
       <th scope="col">Experience</th>

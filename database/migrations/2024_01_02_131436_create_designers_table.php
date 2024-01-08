@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('designers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('email');
+            $table->text('password');
+            $table->string('country');
+            $table->text('education');
+            $table->text('experience');
             $table->timestamps();
         });
     }
